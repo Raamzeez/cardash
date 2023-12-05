@@ -10,37 +10,49 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 import { FaFan } from "react-icons/fa";
 import { ImCross } from "react-icons/im";
 import ControlButton from "./ControlButton";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faArrowRotateRight,
+  faBell,
+  faBellSlash,
+  faBolt,
+  faLightbulb,
+  faLocationDot,
+  faLock,
+  faSquare,
+  faUnlock,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Controls: FC = () => {
   const controls = [
     {
       unactivated: "Unlock Car",
-      icon: FaUnlock,
+      icon: faUnlock,
       activated: "Lock Car",
-      activatedIcon: FaLock,
+      activatedIcon: faLock,
     },
     {
-      unactivated: "Turn On Headlights",
-      icon: PiHeadlightsFill,
-      activated: "Turn Off Headlights",
-      activatedIcon: PiHeadlightsFill,
-    },
-    {
-      unactivated: "Start Engine",
-      icon: RiRestartLine,
-      activated: "Stop Engine",
-      activatedIcon: ImCross,
+      unactivated: "Start Charging",
+      icon: faBolt,
+      activated: "Stop Charging",
+      activatedIcon: faSquare,
     },
     {
       unactivated: "Locate Vehicle",
-      icon: FaMapMarkerAlt,
+      icon: faLocationDot,
       activated: "Locate Vehicle",
-      activatedIcon: FaMapMarkerAlt,
+      activatedIcon: faLocationDot,
+    },
+    {
+      unactivated: "Enable Notifications",
+      icon: faBell,
+      activated: "Disable Notifications",
+      activatedIcon: faBellSlash,
     },
   ];
 
   return (
-    <div className="grid grid-cols-2 gap-y-20 justify-items-center sm:flex sm:flex-row items-center sm:justify-between w-full md:w-4/5 lg:w-2/5 m-10">
+    <div className="grid grid-cols-2 gap-y-12 justify-items-center sm:flex sm:flex-row items-center sm:justify-between w-full md:w-4/5 lg:w-2/5 m-10">
       {controls.map((control) => {
         return (
           // <ControlButton
@@ -50,11 +62,25 @@ const Controls: FC = () => {
           //   icon={control.icon}
           //   activatedIcon={control.activatedIcon}
           // />
-          <div className="relative m-5 flex justify-center items-center h-20 w-20 rounded-full dark bg-sky-500 dark:bg-sky-900 duration-300 hover:shadow-xl hover:cursor-pointer hover:bg-sky-900 dark:hover:bg-sky-400">
+          <div
+            key={control.activated}
+            className="relative m-5 flex justify-center items-center h-20 w-20 rounded-full dark bg-sky-500 dark:bg-sky-900 duration-300 hover:shadow-xl hover:cursor-pointer hover:bg-sky-900 dark:hover:bg-sky-400"
+          >
             {/* <div className="flex items-center justify-center absolute bottom-24 w-32 h-8 bg-slate-600 rounded-md">
               <p className="text-">{control.activated}</p>
             </div> */}
-            <control.icon className="text-3xl" color="white" />
+            {/* <control.icon className="text-3xl" color="white" /> */}
+            {/* <FontAwesomeIcon
+              icon={control.icon}
+              className="text-3xl"
+              color="white"
+            /> */}
+            <ControlButton
+              activated={control.activated}
+              icon={control.icon}
+              unactivated={control.unactivated}
+              activatedIcon={control.activatedIcon}
+            />
           </div>
         );
       })}

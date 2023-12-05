@@ -13,7 +13,9 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         darkgrid: "url('/gridbackground2.jpeg')",
-        lightgrid: "url('/gridbackground7.jpeg')",
+        lightgrid: "url('/gridbackground5.avif')",
+        garage: "url('/garage.jpg')",
+        garagelight: "url('/garage_light.jpeg')",
       },
       fontFamily: {
         serif: ["PT Serif", "serif"],
