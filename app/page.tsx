@@ -7,9 +7,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <main className="flex flex-col items-center">
-      <Overview />
-      <Controls />
-      <TirePressureCard />
+      <p className="text-2xl">Home Page</p>
     </main>
   );
 }

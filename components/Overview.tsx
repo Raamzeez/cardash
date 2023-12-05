@@ -7,11 +7,18 @@ import { IoIosSpeedometer } from "react-icons/io";
 import { BsLightningChargeFill } from "react-icons/bs";
 import TirePressureCard from "./TirePressureCard";
 import TypeLabel from "./TypeLabel";
+import getCarById from "@/tools/getCarById";
 
-const Overview: FC = () => {
+interface iProps {
+  id: string;
+}
+
+const Overview: FC<iProps> = ({ id }) => {
   const [isCharging, setIsCharging] = useState(true);
 
   // const [hover, setHover] = useState(false);
+
+  const car = getCarById(id);
 
   return (
     <div className="relative flex flex-col w-full items-center justify-center p-12 bg-lightgrid dark:bg-darkgrid bg-cover bg-center shadow-lg">
@@ -30,21 +37,21 @@ const Overview: FC = () => {
       </div>
       <div className="absolute top-3 right-6">
         <Image
-          src={"/Mercedes_Icon.png"}
-          height={45}
-          width={45}
+          src={car.icon}
+          height={car.iconHeight ? car.iconHeight + 10 : 55}
+          width={car.iconWidth ? car.iconWidth + 10 : 55}
           alt={`Mercedes Logo`}
         />
       </div>
       <div className="absolute top-16 left-7">
-        <TypeLabel type={"EV"} />
+        <TypeLabel type={car.type} />
       </div>
       <h1 className="text-xl xxs:text-2xl xs:text-4xl font-serif">
-        2023 Mercedes Benz EQS
+        {car.model}
       </h1>
       {/* <h1 className="text-xl xxs:text-2xl xs:text-4xl">2023 Polestar 2</h1> */}
       <Image
-        src={"/car.webp"}
+        src={car.image}
         // height={hover ? 450 : 400}
         // width={hover ? 450 : 400}
         height={400}

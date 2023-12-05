@@ -1,59 +1,16 @@
 import TypeLabel from "@/components/TypeLabel";
+import cars from "@/data/cars";
 import CarType from "@/types/CarType";
 import { faCar, faChargingStation } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
+import Link from "next/link";
 import React, { FC } from "react";
 
 const Page: FC = () => {
-  interface iCar {
-    type: CarType;
-    icon: string;
-    iconHeight?: number;
-    iconWidth?: number;
-    image: string;
-    model: string;
-    year: string;
-  }
-
-  const cars: iCar[] = [
-    {
-      type: "EV" as CarType,
-      icon: "/Mercedes_Icon.png",
-      image: "/car.webp",
-      model: "Mercedes Benz EQS",
-      year: "2023",
-    },
-    {
-      type: "PHEV" as CarType,
-      icon: "/BMW_Icon.png",
-      image: "/car5.png",
-      model: "BMW 330e xDrive",
-      year: "2019",
-    },
-    {
-      type: "ICE" as CarType,
-      icon: "/Audi_Logo.png",
-      image: "/car6.png",
-      model: "Audi A5",
-      year: "2014",
-      iconHeight: 40,
-      iconWidth: 40,
-    },
-    {
-      type: "EV" as CarType,
-      icon: "/Polestar_Icon_White.png",
-      image: "/car2.webp",
-      model: "Polestar 2",
-      year: "2023",
-      iconHeight: 60,
-      iconWidth: 60,
-    },
-  ];
-
   return (
     <>
-      <div className="flex flex-col items-center w-full min-h-screen h-full bg-garagelight dark:bg-garage bg-cover bg-bottom">
+      <div className="flex flex-col items-center w-full min-h-screen h-full bg-garagelight dark:bg-garage bg-cover bg-bottom bg-fixed">
         <div className="flex hover:cursor-pointer hover:shadow-xl duration-200 m-10 bg-gradient-to-r from-cyan-500 to-blue-500 justify-center items-center h-12 w-48 rounded-xl">
           <div className="flex">
             <FontAwesomeIcon icon={faCar} className="mr-3 mt-1" />
@@ -61,9 +18,9 @@ const Page: FC = () => {
           </div>
         </div>
         <div className="flex flex-row justify-center flex-wrap">
-          {cars.map((car, index) => {
+          {cars.map((car) => {
             return (
-              <div key={index}>
+              <Link href={`/dashboard/${car.id}`} key={car.id}>
                 <div className="relative mx-14 flex flex-col justify-center items-center mt-20 h-80 w-80 hover:h-96 hover:w-96 bg-white rounded-sm duration-200 hover:shadow-xl hover:cursor-pointer bg-cover bg-lightgrid dark:bg-darkgrid">
                   <div className="absolute top-3 left-6">
                     <TypeLabel type={car.type} />
@@ -95,7 +52,7 @@ const Page: FC = () => {
                   <h1 className="font-serif text-3xl mt-10">{car.model}</h1>
                   <p className="mt-3 text-md">{car.year}</p>
                 </div> */}
-              </div>
+              </Link>
             );
           })}
         </div>

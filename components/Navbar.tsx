@@ -4,27 +4,24 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
 import React, { FC, useState } from "react";
+import ProfileMenu from "./ProfileMenu";
 
 const Navbar: FC = () => {
   const [showMenu, setShowMenu] = useState(false);
 
   const links = [
     {
-      text: "Home",
-      href: "/",
+      text: "Dashboard",
+      href: "/dashboard/3HEFX",
     },
     {
       text: "Cars",
-      href: "cars",
+      href: "/cars",
     },
     {
       text: "Support",
-      href: "support",
+      href: "/support",
     },
-  ];
-  const menuLinks = [
-    { icon: faBell, text: "Notifications" },
-    { icon: faGear, text: "Settings" },
   ];
 
   return (
@@ -57,26 +54,7 @@ const Navbar: FC = () => {
           className="rounded-full hover:cursor-pointer hover:shadow-2xl duration-200"
           onClick={() => setShowMenu(!showMenu)}
         />
-        {showMenu ? (
-          <div
-            className={`h-36 w-64 bg-white rounded-md absolute top-20 right-0 z-10 border-solid border-2 border-slate-200 duration-300`}
-          >
-            {menuLinks.map((link) => {
-              return (
-                <div className="flex items-center w-full hover:bg-gray-200 hover:cursor-pointer">
-                  <FontAwesomeIcon
-                    icon={link.icon}
-                    className="text-2xl ml-5 p-3"
-                    color="gray"
-                  />
-                  <h3 className="m-5 text-black">{link.text}</h3>
-                </div>
-              );
-            })}
-          </div>
-        ) : (
-          <></>
-        )}
+        {showMenu ? <ProfileMenu /> : <></>}
       </div>
     </nav>
   );
