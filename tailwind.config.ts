@@ -14,6 +14,7 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         darkgrid: "url('/gridbackground2.jpeg')",
         lightgrid: "url('/gridbackground5.avif')",
+        bluegrid: "url('/gridbackground3.jpeg')",
         garage: "url('/garage.jpg')",
         garagelight: "url('/garage_light.jpeg')",
       },

@@ -6,6 +6,7 @@ import { FaC, FaCarBattery } from "react-icons/fa6";
 import { IoIosSpeedometer } from "react-icons/io";
 import { BsLightningChargeFill } from "react-icons/bs";
 import TirePressureCard from "./TirePressureCard";
+import TypeLabel from "./TypeLabel";
 
 const Overview: FC = () => {
   const [isCharging, setIsCharging] = useState(true);
@@ -36,7 +37,7 @@ const Overview: FC = () => {
         />
       </div>
       <div className="absolute top-16 left-7">
-        <p className="text-lg italic text-sky-300 font-semibold">BEV</p>
+        <TypeLabel type={"EV"} />
       </div>
       <h1 className="text-xl xxs:text-2xl xs:text-4xl font-serif">
         2023 Mercedes Benz EQS

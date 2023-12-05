@@ -41,7 +41,7 @@ const Navbar: FC = () => {
             <Link
               key={link.text}
               href={link.href}
-              className="text-xl font-semibold hover:text-blue-400 duration-150 hover:cursor-pointer"
+              className="text-xl font-semibold hover:text-blue-300 duration-150 hover:cursor-pointer"
             >
               {link.text}
             </Link>
@@ -59,17 +59,17 @@ const Navbar: FC = () => {
         />
         {showMenu ? (
           <div
-            className={`h-36 w-64 bg-white rounded-sm absolute top-20 right-0 z-10 border-solid border-2 border-slate-200 duration-300`}
+            className={`h-36 w-64 bg-white rounded-md absolute top-20 right-0 z-10 border-solid border-2 border-slate-200 duration-300`}
           >
             {menuLinks.map((link) => {
               return (
-                <div className="flex items-center w-full hover:bg-gray-100 hover:cursor-pointer">
+                <div className="flex items-center w-full hover:bg-gray-200 hover:cursor-pointer">
                   <FontAwesomeIcon
                     icon={link.icon}
                     className="text-2xl ml-5 p-3"
                     color="gray"
                   />
-                  <h3 className="m-5 text-gray-500">{link.text}</h3>
+                  <h3 className="m-5 text-black">{link.text}</h3>
                 </div>
               );
             })}
