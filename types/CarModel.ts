@@ -9,6 +9,7 @@ interface iCar {
   image: string;
   model: string;
   year: string;
+  oil?: number;
 }
 
 export default iCar;

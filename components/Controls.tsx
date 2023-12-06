@@ -62,26 +62,15 @@ const Controls: FC = () => {
           //   icon={control.icon}
           //   activatedIcon={control.activatedIcon}
           // />
-          <div
-            key={control.activated}
-            className="relative m-5 flex justify-center items-center h-20 w-20 rounded-full dark bg-sky-500 dark:bg-sky-900 duration-300 hover:shadow-xl hover:cursor-pointer hover:bg-sky-900 dark:hover:bg-sky-400"
-          >
-            {/* <div className="flex items-center justify-center absolute bottom-24 w-32 h-8 bg-slate-600 rounded-md">
-              <p className="text-">{control.activated}</p>
-            </div> */}
-            {/* <control.icon className="text-3xl" color="white" /> */}
-            {/* <FontAwesomeIcon
-              icon={control.icon}
-              className="text-3xl"
-              color="white"
-            /> */}
-            <ControlButton
-              activated={control.activated}
-              icon={control.icon}
-              unactivated={control.unactivated}
-              activatedIcon={control.activatedIcon}
-            />
-          </div>
+          // <div className="flex items-center justify-center absolute bottom-24 w-32 h-8 bg-slate-600 rounded-md">
+          //   <p className="text-">{control.activated}</p>
+          // </div>
+          <ControlButton
+            activated={control.activated}
+            icon={control.icon}
+            unactivated={control.unactivated}
+            activatedIcon={control.activatedIcon}
+          />
         );
       })}
     </div>

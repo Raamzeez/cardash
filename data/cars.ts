@@ -17,6 +17,7 @@ const cars: iCar[] = [
     image: "/car5.png",
     model: "BMW 330e xDrive",
     year: "2019",
+    oil: 32,
   },
   {
     id: "JVC3D",
@@ -27,6 +28,7 @@ const cars: iCar[] = [
     year: "2014",
     iconHeight: 40,
     iconWidth: 40,
+    oil: 19,
   },
   {
     id: "SJFFA",

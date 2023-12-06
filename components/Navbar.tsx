@@ -1,24 +1,40 @@
 "use client";
-import { faBell, faGear } from "@fortawesome/free-solid-svg-icons";
+import {
+  IconDefinition,
+  faBell,
+  faGear,
+  faPhone,
+  faTableColumns,
+  faWarehouse,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
 import React, { FC, useState } from "react";
 import ProfileMenu from "./ProfileMenu";
 
+interface iLink {
+  icon: IconDefinition;
+  text: string;
+  href: string;
+}
+
 const Navbar: FC = () => {
   const [showMenu, setShowMenu] = useState(false);
 
-  const links = [
+  const links: iLink[] = [
     {
+      icon: faTableColumns,
       text: "Dashboard",
       href: "/dashboard/3HEFX",
     },
     {
-      text: "Cars",
-      href: "/cars",
+      icon: faWarehouse,
+      text: "Garage",
+      href: "/garage",
     },
     {
+      icon: faPhone,
       text: "Support",
       href: "/support",
     },
@@ -40,6 +56,7 @@ const Navbar: FC = () => {
               href={link.href}
               className="text-xl font-semibold hover:text-blue-300 duration-150 hover:cursor-pointer"
             >
+              <FontAwesomeIcon icon={link.icon} className="text-xl mr-5" />
               {link.text}
             </Link>
           );
