@@ -1,7 +1,7 @@
 import Controls from "@/components/Controls";
 import Navbar from "@/components/Navbar";
 import Overview from "@/components/Overview";
-import TirePressureCard from "@/components/QuadInfoCard";
+import TirePressureCard from "@/components/InfoCard";
 import Image from "next/image";
 
 export default function Home() {

@@ -5,7 +5,7 @@ import React, { FC, useState } from "react";
 import { FaC, FaCarBattery } from "react-icons/fa6";
 import { IoIosSpeedometer } from "react-icons/io";
 import { BsLightningChargeFill } from "react-icons/bs";
-import TirePressureCard from "./QuadInfoCard";
+import TirePressureCard from "./InfoCard";
 import TypeLabel from "./TypeLabel";
 import getCarById from "@/tools/getCarById";
 import LocationModal from "./LocationModal";
@@ -19,17 +19,16 @@ import {
   faOilCan,
   faRotateRight,
 } from "@fortawesome/free-solid-svg-icons";
+import iCar from "@/types/CarModel";
 
 interface iProps {
-  id: string;
+  car: iCar;
 }
 
-const Overview: FC<iProps> = ({ id }) => {
+const Overview: FC<iProps> = ({ car }) => {
   const [isCharging, setIsCharging] = useState(true);
 
   // const [hover, setHover] = useState(false);
-
-  const car = getCarById(id);
 
   return (
     <>
@@ -47,7 +46,7 @@ const Overview: FC<iProps> = ({ id }) => {
             {/* Vehicle Connected */}
           </p>
         </div>
-        <div className="absolute top-16 left-6 flex justify-center items-center h-10 w-10 rounded-full bg-slate-300 dark:bg-blue-500 hover:cursor-pointer hover:shadow-lg duration-200">
+        <div className="absolute top-16 left-6 flex justify-center items-center h-10 w-10 rounded-full bg-blue-500 hover:cursor-pointer hover:shadow-lg duration-200">
           <FontAwesomeIcon
             icon={faRotateRight}
             className="text-lg"

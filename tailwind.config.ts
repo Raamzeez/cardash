@@ -29,6 +29,10 @@ const config: Config = {
         xs: "420px",
         750: "750px",
       },
+      // colors: {
+      //   success: "#34bf67",
+      //   warning: "#f57547",
+      // },
     },
   },
   plugins: [],

@@ -66,6 +66,7 @@ const Controls: FC = () => {
           //   <p className="text-">{control.activated}</p>
           // </div>
           <ControlButton
+            key={control.unactivated}
             activated={control.activated}
             icon={control.icon}
             unactivated={control.unactivated}
