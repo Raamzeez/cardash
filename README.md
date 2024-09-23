@@ -1,3 +1,28 @@
+# Cardash
+## Cardash is a UI-only project created to learn Tailwind CSS and Next JS. It represents a car dashboard, where users can view all their cars, and details such as fuel level, battery level, door and window openings, etc.
+
+### Images
+
+<div align="center">
+<img src="./public/image1.png" width="800" style="margin-bottom: 25px"/>
+<br />
+<br />
+<img src="./public/image2.png" width="800"/>
+<br />
+<br />
+<img src="./public/image3.png" width="800"/>
+<br />
+<br />
+<img src="./public/image4.png" width="800"/>
+<br />
+<br />
+<img src="./public/image5.png" width="800"/>
+</div>
+
+<div>
+  <br />
+</div>
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
