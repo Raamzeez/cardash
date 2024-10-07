@@ -11,12 +11,12 @@ const Page: FC = () => {
   return (
     <>
       <div className="flex flex-col items-center w-full min-h-screen h-full bg-garagelight dark:bg-garage bg-cover bg-bottom bg-fixed">
-        <div className="flex hover:cursor-pointer hover:shadow-xl duration-200 m-10 bg-gradient-to-r from-cyan-500 to-blue-500 justify-center items-center h-12 w-48 rounded-xl">
+        {/* <div className="flex hover:cursor-pointer hover:shadow-xl duration-200 m-10 bg-gradient-to-r from-cyan-500 to-blue-500 justify-center items-center h-12 w-48 rounded-xl">
           <div className="flex">
             <FontAwesomeIcon icon={faCar} className="mr-3 mt-1" />
             <p className="font-semibold">Add Car</p>
           </div>
-        </div>
+        </div> */}
         <div className="flex flex-row justify-center flex-wrap">
           {cars.map((car) => {
             return (
