@@ -23,7 +23,7 @@ const Alert: FC<iProps> = ({ type }) => {
         <div>
           <p className="font-bold">Oil Life Very Low</p>
           <p className="text-sm">
-            Your vehicle's oil needs to be replaced as soon as possible.
+            Your vehicle&apos;s oil needs to be replaced as soon as possible.
           </p>
         </div>
       </div>
