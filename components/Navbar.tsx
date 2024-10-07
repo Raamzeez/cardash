@@ -1,9 +1,6 @@
 "use client";
 import {
   IconDefinition,
-  faBell,
-  faGear,
-  faPhone,
   faTableColumns,
   faWarehouse,
 } from "@fortawesome/free-solid-svg-icons";
@@ -11,7 +8,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
 import React, { FC, useState } from "react";
-import ProfileMenu from "./ProfileMenu";
 
 interface iLink {
   icon: IconDefinition;
@@ -33,11 +29,6 @@ const Navbar: FC = () => {
       text: "Garage",
       href: "/garage",
     },
-    {
-      icon: faPhone,
-      text: "Support",
-      href: "/support",
-    },
   ];
 
   return (
@@ -54,24 +45,24 @@ const Navbar: FC = () => {
             <Link
               key={link.text}
               href={link.href}
-              className="text-xl font-semibold hover:text-blue-300 duration-150 hover:cursor-pointer"
+              className="text-xl font-semibold hover:text-blue-300 duration-150 hover:cursor-pointer mx-5"
             >
-              <FontAwesomeIcon icon={link.icon} className="text-xl mr-5" />
+              <FontAwesomeIcon icon={link.icon} className="text-xl mr-3" />
               {link.text}
             </Link>
           );
         })}
       </div>
       <div className="relative">
-        <Image
+        {/* <Image
           src={"/profile.jpeg"}
           height={40}
           width={50}
           alt="Profile"
           className="rounded-full hover:cursor-pointer hover:shadow-2xl duration-200"
           onClick={() => setShowMenu(!showMenu)}
-        />
-        {showMenu ? <ProfileMenu /> : <></>}
+        /> */}
+        {/* {showMenu ? <ProfileMenu /> : <></>} */}
       </div>
     </nav>
   );

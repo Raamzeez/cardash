@@ -38,11 +38,11 @@ const InfoCard: FC<iProps> = ({
           <div className="flex flex-col items-center mt-10">
             <div className="flex">
               <p className="text-lg font-semibold">{header}</p>
-              <FontAwesomeIcon
+              {/* <FontAwesomeIcon
                 icon={pass ? faCircleCheck : faCircleMinus}
                 className="text-xl ml-4 mt-1"
                 color={pass ? "#34bf67" : "#f57547"}
-              />
+              /> */}
             </div>
             <div
               className={`${
